@@ -131,3 +131,13 @@
         opacity: 1;
       }
 }
+
+
+.i {
+  /* object-fit: contain; */
+  max-width: 370px;
+  max-height: 25vh;
+  float: right;
+  filter: brightness(.7);
+}
+
