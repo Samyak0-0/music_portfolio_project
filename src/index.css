@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
   overflow-x: hidden;
+  font-family: sans-serif;
 }
 
-
-  body {
-    margin: 0;
-    background-color: #18181b;
-  }
+body {
+  margin: 0;
+  background-color: #18181b;
+}
 #image-track {
   position: relative;
   top: 50%;
   transform: translate(0%, -50%);
   user-select: none;
-  margin: 0px 12px 0 0;
+  width: 99vw;
 }
 
 #image-track > div {
@@ -35,17 +35,14 @@
   max-height: 70vmin;
   object-fit: fill;
   object-position: 100% center;
-
 }
 
 .guitar {
   rotate: 30deg;
-  
 }
-.guitar-container{
+.guitar-container {
   width: 80vw;
   top: 50vh;
-
 }
 
 .string {
@@ -57,7 +54,7 @@
   position: relative;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,0);
+  transform: translate(-50%, 0);
   height: 70vh;
 }
 
@@ -112,7 +109,7 @@ div[class$="scroll"] {
   cursor: pointer;
 }
 
-.left_scroll{
+.left_scroll {
   right: 90vw;
   transform: translateX(39px);
 }
@@ -124,9 +121,7 @@ div[class$="scroll"] {
 .contact-pg {
   position: relative;
   overflow: hidden;
-  
 }
-
 
 .nav_li {
   list-style: none;
@@ -152,11 +147,9 @@ div[class$="scroll"] {
   min-height: 50px;
 }
 
-
 .nav_link {
   text-decoration: none;
   color: rgb(255, 255, 255);
-
 }
 
 .nav_link {
@@ -176,7 +169,7 @@ div[class$="scroll"] {
   z-index: 14;
 }
 
-.nav_link:hover:before{
+.nav_link:hover:before {
   transform: scale(1.4);
 }
 
@@ -185,7 +178,7 @@ div[class$="scroll"] {
 }
 
 .linked {
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .hide {
@@ -193,22 +186,23 @@ div[class$="scroll"] {
 }
 
 .woosh1 {
-  animation: boom .5s ease-in-out;
+  animation: boom 0.5s ease-in-out;
 }
 .woosh2 {
   opacity: 0;
-  animation: boom .5s ease-in-out .2s forwards;
+  animation: boom 0.5s ease-in-out 0.2s forwards;
 }
 .woosh3 {
   opacity: 0;
-  animation: boom .5s ease-in-out .4s forwards;
+  animation: boom 0.5s ease-in-out 0.4s forwards;
 }
 
 @keyframes boom {
   from {
     transform: translateX(-40px);
     opacity: 0;
-  } to {
+  }
+  to {
     transform: translate(0, 0);
     opacity: 1;
   }

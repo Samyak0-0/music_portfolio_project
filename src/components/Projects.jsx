@@ -9,8 +9,8 @@ const Projects = () => {
 
   return (
     <div className="flex flex-col w-screen h-screen bg-neutral-800 text-white" id="myproj">
-      <div className="text-7xl z-10 mt-10 sm:mt-[20vh] ml-4">Projects</div>
-      <div className="container1 w-full h-[80vh] sm:h-[60vh] sm:relative sm:top-[10vh]">
+      <div className=" hi text-7xl font-bold overflow-hidden z-10 mt-4 p-8 sm:mt-[20vh]">Projects</div>
+      <div className="container1 w-full h-[70vh] sm:h-[60vh] sm:relative sm:top-[10vh]">
         <div id="image-track">
           <Slide slidesToScroll={1} slidesToShow={(_x > 500)? 2 : 1}>
             {

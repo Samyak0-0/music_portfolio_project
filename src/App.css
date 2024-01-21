@@ -85,6 +85,8 @@
   transform: translate(-50%, 15px);
   width: 70vw;
   overflow: hidden;
+  min-width: 370px;
+  max-width: 500px;
 }
 
 .fb {

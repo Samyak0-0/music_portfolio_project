@@ -26,7 +26,7 @@ const Expertise = () => {
 
   return (
     <div className=" h-screen bg-stone-700 text-white relative" id="skills">
-      <p className="expertise absolute right-[30px] top-[5vh]">Expertise</p>
+      <p className="expertise hi absolute right-[30px] top-[5vh] text-7xl font-bold overflow-hidden">Expertise</p>
       <div className="body2 flex w-screen">
         <div className="expt-div  w-2/3 mt-[20vh] lg:mt-[22vh] lg:ml-[25vw] ml-[20vw] flex flex-col gap-[5vh] md:gap-[10vh]">
           {

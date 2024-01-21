@@ -13,7 +13,7 @@ const ContactPage = () => {
 
   return (
     <div className="contact-pg h-screen bg-neutral-900 text-white text-8xl " id="contact">
-      <p className="mt-4 ml-4">Contact Me!</p>
+      <p className="hi text-7xl font-bold overflow-hidden mt-4 ml-4 p-4">Contact Me!</p>
       <div className="relative top-[5vh]">
       <div className={(offsetY>window.innerHeight*2.5)? 'socials absolute z-10': "hide"}>
         <div className="hero"><a
