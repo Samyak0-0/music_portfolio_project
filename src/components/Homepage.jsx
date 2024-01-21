@@ -4,6 +4,7 @@ const Homepage = () => {
   const [string, setString] = useState("Music Composer");
   const[bezX, setBezX] = useState(0)
   const[bezY, setBezY] = useState(0)
+  const [reset, setReset] = useState(true)
   useEffect(() => {
     let i = 0;
     setInterval(function() {
@@ -24,12 +25,21 @@ const Homepage = () => {
 
 
   function playGuitar(e) {
-    let offset = document.getElementById("canv").getBoundingClientRect()
-    let y = (e.clientY - offset.top)/(offset.bottom - offset.top)*100
-    let x = (e.clientX - offset.left)/(offset.right - offset.left)*1280
+
+   
+      let offset = document.getElementById("canv").getBoundingClientRect()
+      let y = (e.clientY - offset.top)/(offset.bottom - offset.top)*1000
+      let x = (e.clientX - offset.left)/(offset.right - offset.left)*1280
+      
+      setReset(false)
+      setBezX(x)
+      setBezY(y)
+      
     
-    setBezX(x)
-    setBezY(y)
+  }
+
+  function stringReset() {
+    setReset(true)
   }
 
   return (
@@ -41,7 +51,6 @@ const Homepage = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1280.000000 911.000000"
         preserveAspectRatio="xMidYMid meet"
-        onMouseOver={playGuitar}
       >
         <g
           transform="translate(0.000000,911.000000) scale(0.100000,-0.100000)"
@@ -143,18 +152,21 @@ c29 -6 95 -31 147 -56 312 -149 434 -520 278 -841 -39 -80 -153 -204 -230
       </svg>
 
       <svg
-        className="string absolute"
+        className="string absolute z-20"
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1280.000000 911.000000"
         preserveAspectRatio="xMidYMid meet"
+        onMouseMove={playGuitar}
+        onMouseLeave={stringReset}
       >
-        <path d={`M 0 3 Q ${bezX} ${bezY} 994 3`} fill="none" stroke-width="3" stroke="white" />
-        <path d={`M 0 13 Q ${bezX} ${bezY} 994 13`} fill="none" stroke-width="3" stroke="white" />
-        <path d={`M 0 23 Q ${bezX} ${bezY} 994 23`} fill="none" stroke-width="3" stroke="white" />
-        <path d={`M 0 33 Q ${bezX} ${bezY} 994 33`} fill="none" stroke-width="3" stroke="white" />
-        <path d={`M 0 43 Q ${bezX} ${bezY} 994 43`} fill="none" stroke-width="3" stroke="white" />
-        <path d={`M 0 53 Q ${bezX} ${bezY} 994 53`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 416 L 994 416` :`M 0 416 Q ${bezX} ${bezY} 994 416`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 426 L 994 426` :`M 0 426 Q ${bezX} ${bezY} 994 426`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 436 L 994 436` :`M 0 436 Q ${bezX} ${bezY} 994 436`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 446 L 994 446` :`M 0 446 Q ${bezX} ${bezY} 994 446`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 456 L 994 456` :`M 0 456 Q ${bezX} ${bezY} 994 456`} fill="none" stroke-width="3" stroke="white" />
+        <path d={(reset)? `M 0 466 L 994 466` :`M 0 466 Q ${bezX} ${bezY} 994 466`} fill="none" stroke-width="3" stroke="white" />
+      6
       </svg>
       </div>
 
