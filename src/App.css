@@ -48,6 +48,7 @@
   text-shadow: 10px 7px 1px rgba(0, 0, 0, 0.7);
   text-wrap: nowrap;
   border-right: 2px solid rgb(255, 255, 255);
+  max-width: fit-content;
   animation: typewriter 5s steps(28) infinite normal,
     blinkcursor 0.5s infinite normal;
 }
