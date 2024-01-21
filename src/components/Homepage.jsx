@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 
 const Homepage = () => {
   const [string, setString] = useState("Music Composer");
-
+  const[bezX, setBezX] = useState(0)
+  const[bezY, setBezY] = useState(0)
   useEffect(() => {
     let i = 0;
     setInterval(function() {
@@ -21,15 +22,26 @@ const Homepage = () => {
     , 5000)
   }, []);
 
+
+  function playGuitar(e) {
+    let offset = document.getElementById("canv").getBoundingClientRect()
+    let y = (e.clientY - offset.top)/(offset.bottom - offset.top)*100
+    let x = (e.clientX - offset.left)/(offset.right - offset.left)*1280
+    
+    setBezX(x)
+    setBezY(y)
+  }
+
   return (
     <div className="home w-screen flex h-screen bg-stone-700" id="home">
       <div className="absolute guitar-container overflow-y-hidden z-10">
-      <svg
+      <svg id="canv"
         className=" guitar w-[90%]"
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1280.000000 911.000000"
         preserveAspectRatio="xMidYMid meet"
+        onMouseOver={playGuitar}
       >
         <g
           transform="translate(0.000000,911.000000) scale(0.100000,-0.100000)"
@@ -137,12 +149,12 @@ c29 -6 95 -31 147 -56 312 -149 434 -520 278 -841 -39 -80 -153 -204 -230
         viewBox="0 0 1280.000000 911.000000"
         preserveAspectRatio="xMidYMid meet"
       >
-        <path d="M 0 3 L 994 3" fill="white" stroke-width="3" stroke="white" />
-        <path d="M 0 13 L 994 13" fill="white" stroke-width="3" stroke="white" />
-        <path d="M 0 23 L 994 23" fill="white" stroke-width="3" stroke="white" />
-        <path d="M 0 33 L 994 33" fill="white" stroke-width="3" stroke="white" />
-        <path d="M 0 43 L 994 43" fill="white" stroke-width="3" stroke="white" />
-        <path d="M 0 53 L 994 53" fill="white" stroke-width="3" stroke="white" />
+        <path d={`M 0 3 Q ${bezX} ${bezY} 994 3`} fill="none" stroke-width="3" stroke="white" />
+        <path d={`M 0 13 Q ${bezX} ${bezY} 994 13`} fill="none" stroke-width="3" stroke="white" />
+        <path d={`M 0 23 Q ${bezX} ${bezY} 994 23`} fill="none" stroke-width="3" stroke="white" />
+        <path d={`M 0 33 Q ${bezX} ${bezY} 994 33`} fill="none" stroke-width="3" stroke="white" />
+        <path d={`M 0 43 Q ${bezX} ${bezY} 994 43`} fill="none" stroke-width="3" stroke="white" />
+        <path d={`M 0 53 Q ${bezX} ${bezY} 994 53`} fill="none" stroke-width="3" stroke="white" />
       </svg>
       </div>
 
