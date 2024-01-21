@@ -6,6 +6,11 @@
   overflow-x: hidden;
 }
 
+
+  body {
+    margin: 0;
+    background-color: #18181b;
+  }
 #image-track {
   position: relative;
   top: 50%;
@@ -118,6 +123,7 @@ div[class$="scroll"] {
 
 .contact-pg {
   position: relative;
+  overflow: hidden;
   
 }
 
@@ -139,7 +145,7 @@ div[class$="scroll"] {
   display: grid;
   place-items: center;
   background-color: black;
-  width: 100vw;
+  width: calc(102.3vw);
   margin: -10px -10px;
   z-index: 40;
   height: 10vh;

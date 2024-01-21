@@ -170,7 +170,7 @@ c29 -6 95 -31 147 -56 312 -149 434 -520 278 -841 -39 -80 -153 -204 -230
       </svg>
       </div>
 
-      <div className="w-2/3 md:text-6xl text-4xl text-wrap lg:text-8xl text-white font-bold overflow-y-hidden">
+      <div className="w-2/3 text-6xl sm:text-4xl text-wrap lg:text-8xl text-white font-bold overflow-y-hidden">
         <div className="relative top-[10vh] left-[15px]">
           <div className="mb-10 overflow-hidden">
 
@@ -181,7 +181,7 @@ c29 -6 95 -31 147 -56 312 -149 434 -520 278 -841 -39 -80 -153 -204 -230
           <span className="hi">Avinash</span>
           </div>
         
-        <span className="a text-4xl md:text-9xl lg:text-9xl">A</span> <div className="typing text-2xl md:text-6xl">{string}
+        <span className="a sm:text-4xl text-7xl md:text-9xl lg:text-9xl">A</span> <div className="typing sm:text-2xl text-5xl md:text-6xl">{string}
         </div> 
         </div>
       </div>

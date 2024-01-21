@@ -35,6 +35,7 @@ const ContextProvider = ({children}) => {
       }
     }
 
+    const [menu, setMenu] = useState(false)
 
     
     const [offsetY, setOffSetY] = useState(0)
@@ -87,7 +88,14 @@ const ContextProvider = ({children}) => {
   },]
 
 
-    return <Context.Provider value={{ offsetY, showModal, handleClose, openModal, selectedSn, right_scroll, left_scroll, ProjDesc}}>
+  const [_x, set_X] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      set_X(window.innerWidth);
+    });
+  });
+
+    return <Context.Provider value={{ _x ,setMenu, menu, offsetY, showModal, handleClose, openModal, selectedSn, right_scroll, left_scroll, ProjDesc}}>
         {children}
     </Context.Provider>
 }

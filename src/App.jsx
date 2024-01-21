@@ -8,14 +8,16 @@ import ContactPage from './components/ContactPage'
 import Descriptions from './components/Descriptions'
 import { useGlobalContext } from './components/Context'
 import Navbar from './components/Navbar'
+import Menu from './components/Menu'
 
 function App() {
   
-  const {showModal} = useGlobalContext()  
+  const {showModal, menu} = useGlobalContext()  
 
   return (
     <>
       <Navbar />
+      {menu && <Menu />}
       <Homepage />
       <Expertise />
       <Projects />
