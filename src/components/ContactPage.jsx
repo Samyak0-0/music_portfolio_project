@@ -22,7 +22,7 @@ const ContactPage = () => {
         >
           <img src={RoleModel} width="60px"></img>
         </a></div>
-        <div><a className="fb absolute border border-red-400" href="https://www.facebook.com/razzavinash99" target="_blank">
+        <div><a className="fb absolute" href="https://www.facebook.com/razzavinash99" target="_blank">
           <FaFacebook size={60} />
         </a></div>
         <div><a
